@@ -3,7 +3,10 @@ import io from 'socket.io-client';
 import './styles/board.css';
 
 
-const Board = () => {
+const Board = (props) => {
+
+    const code = props.code
+
     const canvasRef = useRef(null);
     const colorsRef = useRef(null);
     const socketRef = useRef();
@@ -58,6 +61,7 @@ const Board = () => {
                 x1: x1 / w,
                 y1: y1 / h,
                 color,
+                teste: code,
             });
         };
 
