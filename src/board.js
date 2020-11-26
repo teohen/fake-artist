@@ -61,7 +61,7 @@ const Board = (props) => {
                 x1: x1 / w,
                 y1: y1 / h,
                 color,
-                teste: code,
+                code,
             });
         };
 
@@ -125,14 +125,13 @@ const Board = (props) => {
 
         // ----------------------- socket.io connection ----------------------------
         const onDrawingEvent = (data) => {
-            console.log('drawing')
             const w = canvas.width;
             const h = canvas.height;
             drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
         }
 
         socketRef.current = io.connect('localhost:8080');
-        socketRef.current.on('drawing', onDrawingEvent);
+        socketRef.current.on('drawing'+code, onDrawingEvent);
     }, []);
 
     // ------------- The Canvas and color elements --------------------------
