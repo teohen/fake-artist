@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Link to="/create-game">Create game</Link>
+      <Link to="/create-player">Create Player</Link>
     </div>
   );
 }
