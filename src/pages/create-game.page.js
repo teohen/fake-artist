@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import GameService from "../services/game.service";
 
 const CreateGame = () => {
 
@@ -7,9 +8,12 @@ const CreateGame = () => {
 
     const history = useHistory();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault();
-        const path = "/game/" + code
+        const game = await GameService.createGame(code)
+        console.log('game', game)
+        const path = "/game/" + game.code
+        
         history.push(path)
     }
     return (

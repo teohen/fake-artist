@@ -15,7 +15,7 @@ function Routes() {
                 <Route path="/create-game" exact={true} component={CreateGame} />
                 <Route path="/create-player" exact={true} component={CreatePlayer} />
                 <Route path="/game/:code" exact={true} component={Game} />
-                <Route path="/menu" exact={true} component={GameMenu} />
+                <Route path="/menu/game" exact={true} component={GameMenu} />
             </Switch>
         </BrowserRouter>
     );
